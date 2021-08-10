@@ -1,0 +1,17 @@
+{
+    "swaggerDefinition": {
+      "info": {
+        "title":  "Basic ExpressJS API ",
+        "description": "An API for CRUD and data fetch operations",
+        "contact": {
+          "name": "SM"
+        },
+        "servers": ["https://localhost:1337"],
+        "version": "0.0.1"
+      },
+      "definitions": {
+        "id": {}
+      }
+    },
+    "apis": ["app.js"]
+}
