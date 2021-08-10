@@ -1,0 +1,15 @@
+{
+    "ignore": [".git", "node_modules", "dist"],
+    "watch": ["./src"], 
+    "exec": "npm start", 
+    "restartable": "rs",
+    "ext": "js,json,ts",
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "events": {
+      "restart": "kill-port 1337",
+      "crash": "kill-port 1337"
+      },
+    "delay": "500"
+}
