@@ -1,9 +1,9 @@
-import express, { Response, Request } from "express";
-import { createUserHandler } from "../controllers";
+import express from "express";
+import { createUserHandler, getUserHandler } from "../controllers";
 import { createUserSchema } from "../schemas/users.schema";
 import { validate as validateRequest } from "../middleware/validateRequest";
 
 export const usersRouter = express.Router();
 
-usersRouter.get("/", (req: Request, res: Response) => res.sendStatus(200));
+usersRouter.get("/", getUserHandler);
 usersRouter.post("/", validateRequest(createUserSchema), createUserHandler);
