@@ -1,17 +1,243 @@
 {
-    "swaggerDefinition": {
-      "info": {
-        "title":  "Basic ExpressJS API ",
-        "description": "An API for CRUD and data fetch operations",
-        "contact": {
-          "name": "SM"
-        },
-        "servers": ["https://localhost:1337"],
-        "version": "0.0.1"
+  "swaggerDefinition": {
+    "info": {
+      "title": "Basic ExpressJS API ",
+      "description": "An API for CRUD and data fetch operations",
+      "contact": {
+        "name": "SM"
       },
-      "definitions": {
-        "id": {}
+      "servers": ["https://localhost:1337"],
+      "version": "0.0.1"
+    },
+    "definitions": {
+      "id": {}
+    },
+    "securityDefinitions": {
+      "JWT": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "access_token"
       }
     },
-    "apis": ["app.js"]
+    "openapi": "3.0.0",
+    "paths": {
+      "/users": {
+        "get": {
+          "description": "Auto generated using Swagger Inspector",
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json; charset=utf-8": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "examples": {}
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "http://localhost:1337"
+            }
+          ]
+        },
+        "post": {
+          "description": "Auto generated using Swagger Inspector",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "passwordConfirmation": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "0": {
+                    "value": "{\n    \"email\": \"testing@email.com\",\n    \"password\": \"123456\",\n    \"passwordConfirmation\": \"123456\",\n    \"name\": \"Tester\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json; charset=utf-8": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "examples": {}
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "http://localhost:1337"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "http://localhost:1337"
+          }
+        ]
+      },
+      "/sessions": {
+        "post": {
+          "description": "Auto generated using Swagger Inspector",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "password": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "0": {
+                    "value": "{\n    \"email\": \"testing@email.com\",\n    \"password\": \"123456\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json; charset=utf-8": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "examples": {}
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "http://localhost:1337"
+            }
+          ]
+        },
+        "get": {
+          "description": "Auto generated using Swagger Inspector",
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json; charset=utf-8": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "examples": {}
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "servers": [
+            {
+              "url": "http://localhost:1337"
+            }
+          ]
+        },
+        "delete": {
+          "description": "Auto generated using Swagger Inspector",
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "text/plain; charset=utf-8": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "examples": {}
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "servers": [
+            {
+              "url": "http://localhost:1337"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "http://localhost:1337"
+          }
+        ]
+      },
+      "/": {
+        "get": {
+          "description": "Auto generated using Swagger Inspector",
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "text/plain; charset=utf-8": {
+                  "schema": {
+                    "type": "string"
+                  },
+                  "examples": {}
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "http://localhost:1337"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "http://localhost:1337"
+          }
+        ]
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    }
+  },
+  "apis": ["app.js"]
 }

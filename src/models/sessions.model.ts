@@ -18,6 +18,4 @@ const SessionSchema = new Schema(
   { timestamps: true }
 );
 
-const Session = model<SessionDocument>("Session", SessionSchema);
-
-export default Session;
+export const Session = model<SessionDocument>("Session", SessionSchema);
