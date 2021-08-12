@@ -21,7 +21,7 @@ export const getAllUsersHandler = async (req: Request, res: Response) => {
     log.info(req.body);
     const user = await findAllUsers(req.body);
     if (!user) {
-      return false;
+      return res.status(404).send({ error: "User not found" });
     }
     return res.send(user);
   } catch (error) {
@@ -35,7 +35,7 @@ export const getUserHandler = async (req: Request, res: Response) => {
     log.info(req.body);
     const user = await findUser(req.body);
     if (!user) {
-      return false;
+      return res.status(404).send({ error: "User not found" });
     }
     return res.send(user);
   } catch (error) {
